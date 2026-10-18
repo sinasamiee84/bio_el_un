@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}سامانه تحلیل نوار قلب{% endblock %}</title>
+    <!-- اتصال به فایل CSS خودتان -->
+    <link rel="stylesheet" href="{% static 'analyzer/style.css' %}">
+</head>
+<body>
+    <div class="main-container">
+        <!-- منوی دسترسی بالا -->
+        <nav class="navbar">
+            <a href="{% url 'analyzer:home' %}" class="nav-link">تحلیل سیگنال ECG</a>
+            <a href="{% url 'analyzer:about' %}" class="nav-link">درباره سیستم</a>
+        </nav>
+
+        <!-- بخش متغیر محتوای صفحات -->
+        <main class="content-body">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

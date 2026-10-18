@@ -1,0 +1,90 @@
+{% extends 'analyzer/base.html' %}
+
+{% block title %}درباره سامانه تحلیل نوار قلب{% endblock %}
+
+{% block content %}
+<main class="about-page">
+    <header class="about-header">
+        <p class="about-eyebrow">ECG ANALYZER</p>
+        <h1 class="page-title">درباره سامانه تحلیل نوار قلب</h1>
+        <p class="page-subtitle">
+            ابزاری آموزشی برای پردازش اولیه و بررسی ویژگی‌های پایه‌ای سیگنال ECG
+        </p>
+    </header>
+
+    <section class="about-section">
+        <h2 class="about-heading">معرفی سامانه</h2>
+        <p class="about-text">
+            این سامانه فایل نوار قلب را دریافت می‌کند و پس از پردازش اولیه،
+            قله‌های احتمالی موج R و فاصله‌های بین ضربان‌ها (RR) را بررسی می‌کند.
+            سپس نرخ ضربان تقریبی و نظم فواصل RR را محاسبه و نتیجه را همراه با نمودار نمایش می‌دهد.
+        </p>
+    </section>
+
+    <section class="about-section">
+        <h2 class="about-heading">قابلیت‌ها</h2>
+        <ul class="feature-list">
+            <li>دریافت سیگنال ECG در قالب فایل CSV یا TXT</li>
+            <li>شناسایی قله‌های احتمالی موج R</li>
+            <li>محاسبه نرخ ضربان قلب و فواصل RR</li>
+            <li>بررسی مقدماتی نظم فواصل بین ضربان‌ها</li>
+            <li>نمایش نمودار سیگنال و محل قله‌های شناسایی‌شده</li>
+        </ul>
+    </section>
+
+    <section class="about-section">
+        <h2 class="about-heading">منطق دسته‌بندی اولیه</h2>
+        <p class="about-text">
+            برنامه با استفاده از نرخ ضربان محاسبه‌شده و تغییرپذیری فواصل RR،
+            نتیجه را در یکی از دسته‌های زیر قرار می‌دهد:
+        </p>
+
+        <div class="rhythm-list">
+            <article class="rhythm-item">
+                <h3>ضربان پایین</h3>
+                <p><span dir="ltr">BPM &lt; 60</span></p>
+                <p>نرخ ضربان محاسبه‌شده کمتر از ۶۰ ضربه در دقیقه است.</p>
+            </article>
+
+            <article class="rhythm-item">
+                <h3>ضربان بالا</h3>
+                <p><span dir="ltr">BPM &gt; 100</span></p>
+                <p>نرخ ضربان محاسبه‌شده بیشتر از ۱۰۰ ضربه در دقیقه است.</p>
+            </article>
+
+            <article class="rhythm-item">
+                <h3>فواصل نامنظم</h3>
+                <p><span dir="ltr">std(RR) &gt; 0.12 s</span></p>
+                <p>تغییرپذیری فواصل RR از آستانهٔ تعیین‌شده در برنامه بیشتر است.</p>
+            </article>
+
+            <article class="rhythm-item">
+                <h3>در محدودهٔ معمول برنامه</h3>
+                <p>
+                    نرخ ضربان بین ۶۰ تا ۱۰۰ است و
+                    <span dir="ltr">std(RR) ≤ 0.12 s</span>.
+                </p>
+                <p>این عنوان فقط به قواعد فعلی برنامه اشاره دارد و معادل تشخیص ریتم سینوسی طبیعی نیست.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="about-notice" role="note">
+        <h2 class="about-heading">محدودیت و نکتهٔ مهم</h2>
+        <p>
+            این سامانه آموزشی است و ابزار تشخیص پزشکی محسوب نمی‌شود.
+            بررسی قله‌های R و فواصل RR به‌تنهایی برای تشخیص نوع مشخص آریتمی کافی نیست.
+            برای ارزیابی پزشکی، تفسیر نوار قلب باید توسط متخصص انجام شود.
+        </p>
+        <p>
+            این نسخه شکل موج و بخش‌هایی مانند موج P، کمپلکس QRS و قطعهٔ ST را
+            به‌طور کامل تحلیل نمی‌کند؛ بنابراین برای تشخیص مواردی مانند PVC، PAC،
+            بلوک‌های قلبی یا تغییرات ایسکمیک طراحی نشده است.
+        </p>
+    </section>
+
+    <footer class="about-footer">
+        پیاده‌سازی‌شده با Django و کتابخانه‌های پردازش علمی Python، از جمله SciPy و NumPy.
+    </footer>
+</main>
+{% endblock %}

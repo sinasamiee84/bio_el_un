@@ -1,0 +1,219 @@
+/* تنظیمات پایه */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Vazirmatn, Tahoma, -apple-system, sans-serif;
+    background-color: #f0f2f5;
+    color: #2d3748;
+    line-height: 1.7;
+    direction: rtl;
+    padding: 30px 15px;
+}
+
+.main-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+/* نوبار / منوی بالا */
+.navbar {
+    display: flex;
+    gap: 12px;
+    background: #1a365d;
+    padding: 16px 24px;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* بدنه محتوا */
+.content-body {
+    padding: 32px 28px;
+}
+
+.page-title {
+    font-size: 22px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+/* فرم‌ها */
+.form-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    background-color: #ffffff;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-help {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.form-error {
+    font-size: 13px;
+    color: #dc2626;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* دکمه‌ها */
+.btn-submit {
+    background-color: #0d9488;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #0f766e;
+}
+
+/* هشدارهای خطا */
+.alert-box {
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+/* باکس نتایج تحلیل */
+.results-card {
+    margin-top: 30px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 22px;
+}
+
+.results-title {
+    color: #166534;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.metric-item {
+    font-size: 15px;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.metric-value {
+    font-weight: bold;
+    color: #0f172a;
+}
+
+.arrhythmia-list {
+    list-style-type: disc;
+    padding-right: 20px;
+    margin: 12px 0 20px 0;
+}
+
+.arrhythmia-list li {
+    color: #b91c1c;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* بخش نمایش نمودار */
+.plot-wrapper {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.plot-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* صفحه درباره پروژه */
+.about-text {
+    font-size: 15px;
+    color: #334155;
+    margin-bottom: 16px;
+}
+
+.feature-list {
+    list-style: square;
+    padding-right: 22px;
+    color: #475569;
+    font-size: 14px;
+}
+
+.feature-list li {
+    margin-bottom: 8px;
+}
